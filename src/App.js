@@ -119,7 +119,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { FaHome, FaSignInAlt, FaChalkboardTeacher, FaUserGraduate, FaBook, FaCalendarAlt, FaBuilding, FaDollarSign, FaChartBar, FaEnvelope, FaBullhorn, FaCalendarCheck, FaCalendarPlus, FaCalendar, FaUserCircle } from 'react-icons/fa';
+import { FaHome,  FaChalkboardTeacher, FaUserGraduate, FaBuilding,  FaUserCircle } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -155,7 +155,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* Improved Navbar */}
+        {/* Improved Na */}
         <Navbar bg="dark" variant="dark" expand="lg" className="shadow-sm mb-4">
           <Container>
             {/* Logo and brand */}
