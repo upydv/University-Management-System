@@ -3,25 +3,29 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { FaGraduationCap, FaBook, FaUsers, FaChalkboardTeacher } from 'react-icons/fa';
 
-const InfoCard = ({ icon, title, text, bgColor }) => (
-  <Card
-    className="mb-4 text-center"
-    style={{
-      backgroundColor: bgColor,
-      border: 'none',
-      borderRadius: '10px',
-      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-      transition: 'transform 0.3s ease',
-    }}
-    onMouseOver={(e) => (e.currentTarget.style.transform = 'translateY(-5px)')}
-    onMouseOut={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
-  >
-    <Card.Body>
-      {icon}
-      <Card.Title className="font-weight-bold">{title}</Card.Title>
-      <Card.Text className="text-muted">{text}</Card.Text>
-    </Card.Body>
-  </Card>
+// Reusable InfoCard component
+const InfoCard = ({ icon, title, text, bgColor, linkTo }) => (
+  <Link to={linkTo} style={{ textDecoration: 'none' }}>
+    <Card
+      className="mb-4 text-center"
+      style={{
+        backgroundColor: bgColor,
+        border: 'none',
+        borderRadius: '10px',
+        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+        transition: 'transform 0.3s ease',
+        color: 'inherit',
+      }}
+      onMouseOver={(e) => (e.currentTarget.style.transform = 'translateY(-5px)')}
+      onMouseOut={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
+    >
+      <Card.Body>
+        {icon}
+        <Card.Title className="font-weight-bold">{title}</Card.Title>
+        <Card.Text className="text-muted">{text}</Card.Text>
+      </Card.Body>
+    </Card>
+  </Link>
 );
 
 const HomePage = () => {
@@ -61,6 +65,7 @@ const HomePage = () => {
             title="Student Management"
             text="Efficiently manage student records, admissions, and academic progress."
             bgColor="#f8f9fa"
+            linkTo="/student-profile"
           />
         </Col>
         <Col xs={12} sm={6} md={3}>
@@ -69,6 +74,7 @@ const HomePage = () => {
             title="Course Management"
             text="Organize and track courses, schedules, and curriculum details with ease."
             bgColor="#f1f3f5"
+            linkTo="/course-management"
           />
         </Col>
         <Col xs={12} sm={6} md={3}>
@@ -77,6 +83,7 @@ const HomePage = () => {
             title="Faculty Management"
             text="Streamline faculty information, assignments, and performance evaluations."
             bgColor="#f8f9fa"
+            linkTo="/faculty-profile"
           />
         </Col>
         <Col xs={12} sm={6} md={3}>
@@ -85,6 +92,7 @@ const HomePage = () => {
             title="Class Scheduling"
             text="Effortlessly create and manage class schedules for students and faculty."
             bgColor="#f1f3f5"
+            linkTo="/class-schedule"
           />
         </Col>
       </Row>
